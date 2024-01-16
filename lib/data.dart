@@ -12,15 +12,15 @@ class Game {
   String description;
   String studio;
 
-  Game(this.title, this.coverImage, this.description, this.studio);
+  Game(this.title, this.coverImage, this.description, this.studio, {List<GameImage>? images})
+      : images = images ?? []; // Use the null-aware operator to handle null case.
 }
 
-List<Game> GamesOne = [
-
+List<Game> gamesone = [
   Game(
     "Metro Exodus",
     GameImage(
-        "https://assets1.ignimgs.com/2018/12/14/metro-exodus---button-1544750418985.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/4_s8dyxn.jpg",
         ""),
     "",
     "4A Games",
@@ -28,7 +28,7 @@ List<Game> GamesOne = [
   Game(
     "Horizon Zero Dawn",
     GameImage(
-        "https://www.wallpaperflare.com/static/734/272/885/horizon-zero-dawn-playstation-4-logo-aloy-horizon-zero-dawn-wallpaper.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/5_wfrudr.jpg",
         ""),
     "",
     "Guerrilla Games",
@@ -36,7 +36,7 @@ List<Game> GamesOne = [
   Game(
     "Resident Evil 2",
     GameImage(
-        "https://media.playstation.com/is/image/SCEA/resident-evil-2-box-art-01-ps4-us-12dec18?\$native_nt\$",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/3_tuyl8k.jpg",
         ""),
     "",
     "Capcom",
@@ -44,53 +44,101 @@ List<Game> GamesOne = [
   Game(
     "Tom Clancy's The Division 2",
     GameImage(
-        "https://cdn.division.zone/uploads/2019/03/tc-the-division-2-preload-start-times-sizes-header.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/6_jfehmd.jpg",
         ""),
     "",
     "Massive Entertainment",
   ),
-
+  Game(
+    "Tom 2",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/7_jgmasj.jpg",
+        ""),
+    "",
+    "Massive Entertainment",
+  ),
+  Game(
+    "Frank 2",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/8_ozvg8z.jpg",
+        ""),
+    "",
+    "Massive Entertainment",
+  ),
+  Game(
+    "Scarface 2",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/9_mp3sgb.jpg",
+        ""),
+    "",
+    "Massive Entertainment",
+  ),
+  Game(
+    "Scarface 2",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/10_u6hybr.jpg",
+        ""),
+    "",
+    "Massive Entertainment",
+  ),
 ];
 
-List<Game> GamesTwo = [
+List<Game> gamestwo = [
   Game(
-    "The Last of Us Part II",
-    GameImage("https://mvpo.us/img/P6253.jpg", ""),
-    "",
-    "Naughty Dog",
-  ),
-  Game(
-    "Grand Theft Auto V",
+    "Frank 2",
     GameImage(
-        "https://gpstatic.com/acache/26/25/1/uk/packshot-7136bdab871d6b2c8f07ccc9ad33b4d0.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/8_ozvg8z.jpg",
         ""),
     "",
-    "Rockstar Games",
+    "Massive Entertainment",
   ),
   Game(
-    "Just Cause 4",
+    "Scarface 2",
     GameImage(
-        "https://s3.gaming-cdn.com/images/products/2666/orig/just-cause-4-cover.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/9_mp3sgb.jpg",
         ""),
     "",
-    "Avalanche Studios",
+    "Massive Entertainment",
   ),
   Game(
-    "Sekiro: Shadows Die Twice",
+    "Scarface 2",
     GameImage(
-        "https://onlysp.escapistmagazine.com/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-logo-art.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/10_u6hybr.jpg",
         ""),
     "",
-    "From Software",
+    "Massive Entertainment",
   ),
-
+  Game(
+    "execute Kali",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/4_s8dyxn.jpg",
+        ""),
+    "",
+    "4A Games",
+  ),
+  Game(
+    "Two Bay",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/5_wfrudr.jpg",
+        ""),
+    "",
+    "Guerrilla Games",
+  ),
+  Game(
+    "Evil 2",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/3_tuyl8k.jpg",
+        ""),
+    "",
+    "Capcom",
+  ),
 ];
 
-List<Game> TopGames = [
+List<Game> topgames = [
   Game(
     "Total War: Three Kingdoms",
     GameImage(
-        "https://content.totalwar.com/total-war/com.totalwar.www2019/uploads/2019/03/08145252/2.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/zn2peq18sibcra1rzbmt.jpg",
         ""),
     "",
     "Feral Interactive",
@@ -98,7 +146,7 @@ List<Game> TopGames = [
   Game(
     "Call of Duty: Modern Warfare",
     GameImage(
-        "https://images.hdqwalls.com/download/call-of-duty-modern-warfare-2019-4k-cb-1920x1080.jpg",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/pohmsmd0ll3byzrndjzo.jpg",
         ""),
     "",
     "Infinity Ward",
@@ -106,17 +154,33 @@ List<Game> TopGames = [
   Game(
     "Mortal Kombat 11",
     GameImage(
-        "https://static.trueachievements.com/customimages/093902.jpg", ""),
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/bylceymlhn0hgs5d4m7l.jpg",
+        ""),
     "",
     "NetherRealm Studios",
   ),
   Game(
     "Dragon Ball Z: Kakarot",
     GameImage(
-        "https://cdn3.dualshockers.com/wp-content/uploads/2020/01/dbx-kakarot.png",
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/sz4lyhxa94pe4lnj9y8l.jpg",
         ""),
     "",
     "CyberConnect2",
   ),
-
+  Game(
+    "Red Dev",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/pvlrkltcaxnjwb3s1vjh.jpg",
+        ""),
+    "",
+    "CyberConnect2",
+  ),
+  Game(
+    "Blue Dev",
+    GameImage(
+        "https://res.cloudinary.com/dnmvkq8sl/image/upload/v1705432033/uqpbyijazqvwvbugcfkp.jpg",
+        ""),
+    "",
+    "CyberConnect2",
+  ),
 ];
