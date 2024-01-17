@@ -104,11 +104,14 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: _deviceHeight * 0.18),
             _topGameInfo(),
             Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
-              child: ScrollGamesWidget(_deviceHeight * 0.20, _deviceWidth, true, gamesone)
+              child: ScrollGamesWidget(_deviceHeight * 0.14, _deviceWidth, true, gamesone)
             ),
+            _topGameBannerWidget(),
+            SizedBox(height: _deviceHeight * 0.01),
+
 
             Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
-                child: ScrollGamesWidget(_deviceHeight * 0.20, _deviceWidth, false, gamesone)
+                child: ScrollGamesWidget(_deviceHeight * 0.14, _deviceWidth, false, gamesone)
             )
 
           ],
@@ -125,13 +128,13 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Icon(
             Icons.menu,
-            color:Colors.red
+            color:Colors.white
           ),
           Row(
             children: <Widget> [
               Icon(
                   Icons.search,
-                  color:Colors.red
+                  color:Colors.white
               ),
               SizedBox(
                 width: _deviceWidth* 0.03,
@@ -139,7 +142,7 @@ class _HomePageState extends State<HomePage> {
 
               Icon(
                   Icons.notifications_active,
-                  color:Colors.red
+                  color:Colors.white
               ),
 
             ],
@@ -193,5 +196,19 @@ class _HomePageState extends State<HomePage> {
 
     );
 
+  }
+
+  Widget _topGameBannerWidget(){
+    return Container(
+      height: _deviceHeight * 0.15,
+      width:  _deviceWidth,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(topgames[2].coverImage.url),
+        )
+      ),
+    );
   }
 }
