@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           _topGamesWidget(),
           _gradientBoxWidget(),
+          _topLayerWidget(),
         ],
       ),
     );
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: _deviceHeight * 0.62,
+        height: _deviceHeight * 0.72,
         width: _deviceWidth,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -84,6 +85,58 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _topLayerWidget(){
+    return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: _deviceWidth * 0.04, vertical: _deviceHeight * 0.025
+
+        ),
+        child: Column(
+          mainAxisAlignment:  MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            _topBarWidget(),
+          ],
+        ),
+    );
+  }
+
+  Widget _topBarWidget(){
+    return SizedBox(
+      height: _deviceHeight*0.13,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Icon(
+            Icons.menu,
+            color:Colors.red
+          ),
+          Row(
+            children: <Widget> [
+              Icon(
+                  Icons.search,
+                  color:Colors.red
+              ),
+              SizedBox(
+                width: _deviceWidth* 0.03,
+              ),
+
+              Icon(
+                  Icons.notifications_active,
+                  color:Colors.red
+              ),
+
+            ],
+          )
+
+        ],
+      ),
+
     );
   }
 }
