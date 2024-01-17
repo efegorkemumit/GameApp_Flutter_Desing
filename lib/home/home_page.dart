@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: _deviceHeight * 0.72,
+        height: _deviceHeight * 0.68,
         width: _deviceWidth,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -100,6 +100,8 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             _topBarWidget(),
+            SizedBox(height: _deviceHeight * 0.18),
+            _topGameInfo(),
           ],
         ),
     );
@@ -138,5 +140,49 @@ class _HomePageState extends State<HomePage> {
       ),
 
     );
+  }
+
+
+  Widget _topGameInfo(){
+    return SizedBox(
+      height: _deviceHeight * 0.15,
+      width: _deviceWidth,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            topgames[_selectedGame].title,
+            maxLines: 1,
+            style: TextStyle(color: Colors.white, fontSize: _deviceHeight*0.035),
+          ),
+          SizedBox(height: _deviceHeight * 0.02),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: topgames.map((_game){
+              bool _isActive =
+                  _game.title == topgames[_selectedGame].title;
+              double _circleRadius = _deviceHeight * 0.006;
+              return Container(
+                margin: EdgeInsets.only(right: _deviceWidth * 0.020),
+                height: _circleRadius * 2,
+                width: _circleRadius * 2,
+                decoration: BoxDecoration(
+                  color: _isActive ? Colors.green : Colors.grey,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+
+              );
+
+            }).toList(),
+          )
+        ],
+
+      ),
+
+    );
+
   }
 }
