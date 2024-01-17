@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameapp_flutter/data.dart';
+import 'package:gameapp_flutter/home/ScroolWidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -102,6 +103,14 @@ class _HomePageState extends State<HomePage> {
             _topBarWidget(),
             SizedBox(height: _deviceHeight * 0.18),
             _topGameInfo(),
+            Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+              child: ScrollGamesWidget(_deviceHeight * 0.20, _deviceWidth, true, gamesone)
+            ),
+
+            Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+                child: ScrollGamesWidget(_deviceHeight * 0.20, _deviceWidth, false, gamesone)
+            )
+
           ],
         ),
     );
